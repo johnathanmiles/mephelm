@@ -11,6 +11,9 @@ image:
   containerPort: 8000
   livenessProbe: /
   readinessProbe: /
+  env: 
+    - name: ASPNETCORE_ENVIRONMENT
+      value: "Development"
 
 service:
   type: NodePort
@@ -30,9 +33,6 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-  env: []
-  #- name: ASPNETCORE_ENVIRONMENT
-  #    value: "Develoopment"
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
