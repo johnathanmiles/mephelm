@@ -51,7 +51,7 @@ spec:
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
-{{- if .Values.imageCredentials.enabled -}}
+{{- if .Values.imageCredentials.enabled}}
       imagePullSecrets:
         - name: {{ .Values.imageCredentials.name }}
 {{- end }}
