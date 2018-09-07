@@ -27,6 +27,8 @@ spec:
             - name: http
               containerPort: {{ default "80" .Values.image.containerPort }}
               protocol: TCP
+          env:
+{{ toYaml .Values.image.env | indent 12 }}
           livenessProbe:
             httpGet:
               path: {{ default "/" .Values.image.livenessProbe }}

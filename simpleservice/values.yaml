@@ -11,6 +11,9 @@ image:
   containerPort: 8000
   livenessProbe: /
   readinessProbe: /
+  env: 
+    - name: ASPNETCORE_ENVIRONMENT
+      value: "Development"
 
 service:
   type: NodePort
