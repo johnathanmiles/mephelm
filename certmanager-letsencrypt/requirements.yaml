@@ -1,5 +1,0 @@
-# Main dependency is cert-manager
-dependencies:
-- name: cert-manager
-  repository: "@stable"
-  version: ~0.5.0
