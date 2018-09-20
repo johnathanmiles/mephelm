@@ -1,0 +1,4 @@
+Certificate Manager and Lets Encrypt added with the following certificate configuration:
+{{- range $name, $domain := .Values.certificates }}
+    {{ $name }}: {{ $domain }}
+{{- end }}
