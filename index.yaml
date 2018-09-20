@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  certmanager-letsencrypt:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-20T11:26:28.319976836+01:00
+    description: Combination of CertManager and LetsEncrypt to provide the certificates
+    digest: b18716b677b7ad9d16fd9ffb01fabb232d6a477423119f790adc344f56765276
+    name: certmanager-letsencrypt
+    urls:
+    - https://johnathanmiles.github.io/mephelm/certmanager-letsencrypt-0.1.0.tgz
+    version: 0.1.0
+  externaldns-aks:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-20T11:26:28.320236155+01:00
+    description: External DNS for an Azure AKS setup
+    digest: e6366d5b01d64e448ef97fa8565e954fb9011cadf60d22bcfb53cb645c902a2e
+    name: externaldns-aks
+    urls:
+    - https://johnathanmiles.github.io/mephelm/externaldns-aks-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-09-20T11:26:28.318843119+01:00
