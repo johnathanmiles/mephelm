@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: external-dns
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: external-dns
+        chart: {{ template "externalDns.chart" . }}
+    spec:
+      serviceAccountName: external-dns
+      containers:
+      - name: external-dns
+        image: registry.opensource.zalan.do/teapot/external-dns:latest
+        args:
+        - --source=service
+        - --source=ingress
+{{- if .Values.domainFilter.enabled}}
+        - --domain-filter={{ .Values.domainFilter.filter }}
+{{- end }}        
+        - --provider=azure
+        - --azure-resource-group={{ .Values.dnsZoneResourceGroup }}
+        volumeMounts:
+        - name: azure-config-file
+          mountPath: /etc/kubernetes
+          readOnly: true
+      volumes:
+      - name: azure-config-file # This already needs to be present and have credentials to access the DNS Zone. It gets put down as part of the terraform module for AKS
+        secret:
+          secretName: azure-config-file

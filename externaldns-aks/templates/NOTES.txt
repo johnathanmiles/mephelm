@@ -1,0 +1,1 @@
+External DNS added which will write routes for {{ .Values.domainFilter.filter }} to the DNS Zone
